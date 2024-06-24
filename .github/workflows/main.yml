@@ -1,0 +1,16 @@
+name: Koyeb Runner
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  run-tests:
+    runs-on: koyeb-runner
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Run tests
+        run: |
+          echo "Hello from Koyeb runner!"
