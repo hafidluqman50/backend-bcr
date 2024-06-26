@@ -20,3 +20,9 @@ jobs:
           npm ci --include=dev
           echo "Running Test On CI/CD",
           npm run test
+        with: 
+          PGHOST: ${{ secrets.PGHOST }}
+          PGPORT: ${{ secrets.PGPORT }}
+          PGDATABASE: ${{ secrets.PGDATABASE }}
+          PGUSER: ${{ secrets.PGUSER }}
+          PGPASSWORD: ${{ secrets.PGPASSWORD }}
