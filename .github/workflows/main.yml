@@ -1,4 +1,4 @@
-name: Koyeb Runner
+name: CI/CD BACKEND BCR
 
 on:
   push:
@@ -6,11 +6,17 @@ on:
       - main
 
 jobs:
-  run-tests:
-    runs-on: koyeb-runner
+  build:
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+            node-version: 20
       - name: Run tests
         run: |
-          echo "Hello from Koyeb runner!"
+          npm ci --include=dev
+          echo "Running Test On CI/CD",
+          npm run test
