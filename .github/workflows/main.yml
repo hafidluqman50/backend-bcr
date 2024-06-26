@@ -15,6 +15,9 @@ jobs:
         uses: actions/setup-node@v4
         with:
             node-version: 20
+      - name: Run Build
+        run: |
+          npm ci --include=dev
       - name: Run tests
         run: |
           echo "Running Test On CI/CD",
@@ -25,6 +28,3 @@ jobs:
           PGDATABASE: ${{ secrets.PGDATABASE }}
           PGUSER: ${{ secrets.PGUSER }}
           PGPASSWORD: ${{ secrets.PGPASSWORD }}
-      - name: Run Build
-        run: |
-          npm ci --include=dev
