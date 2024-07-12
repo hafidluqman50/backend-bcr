@@ -13,5 +13,5 @@ userAuthRoute.route('/:id')
   .put(none.none(), (req: Request, res: Response): Promise<void> => userController.update(req, res))
   .delete(none.none(), (req: Request, res: Response): Promise<void> => userController.delete(req, res))
 
-export default usersRoute
+export default userAuthRoute
         
